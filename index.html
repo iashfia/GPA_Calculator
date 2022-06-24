@@ -10,11 +10,11 @@
     <meta name="theme-color" content="#F76900" />
     <meta
       name="description"
-      content="GPA Calculator developed by Nuwan Sameera Alawatta for BSc (Hons) in Software Engineering degree programme, University of Kelaniya, Sri Lanka."
+      content="Made By Ashfia Ibnat"
     />
     <meta
       name="keywords"
-      content="uok, university of kelaniya, uokse, software enigneering sri lanka, it sri lanka, nuwan alawatta, nuwan94, nsa94"
+      content="Made by Ashfia Ibnat"
     />
   
     <!-- Compiled and minified CSS -->
@@ -30,14 +30,20 @@
     />
   </head>
 
+
+
+
+
+
+
   <body ng-controller="gpaCtrl" ng-init="updateGPA()">
-    <div class="loader blue-grey darken-4">
+    <div class="loader red darken-4">
       <div class="progress blue-grey darken-4">
         <div class="indeterminate indigo"></div>
       </div>
     </div>
 
-    <main>
+    <main class="center">
       <ul id="slide-out" class="sidenav">
         <li>
           <a class="btn-flat hide-on-large-only modal-trigger" href="#modal1">
@@ -108,7 +114,7 @@
               <td>C-</td>
               <td>D+</td>
               <td>D</td>
-              <td>E</td>
+              <td>F</td>
             </tr>
             <tr>
               <td>{{results.get(2.7).count || '0'}}</td>
@@ -159,10 +165,14 @@
            
             <div
               href="#"
-              class="brand-logo GPA center"
+              class=" GPA center"
               title="{{ myGPA | number : 2 }}"
             >
-              GPA : {{ myGPA | number : 4 }}
+              Ashfia's GPA Calculator 
+            
+             
+
+
             </div>
 
             <a data-target="slide-out" class="right sidenav-trigger">
@@ -179,25 +189,21 @@
         <div class="row subjectTab">
           <div class="col s12">
             <ul class="tabs">
-              <li class="tab col s3" ng-repeat="z in subjects">
+              <li class="tab col s12" ng-repeat="z in subjects">
                 <a class="active" href="#year{{z.year}}"
-                  >Year {{ z.year }}
-                  <span
-                    class="badge blue white-text tooltipped"
-                    data-position="bottom"
-                    data-tooltip="Year {{z.year}} GPA"
-                    >{{ z.yearGPA ? z.yearGPA : 0 | number:2 }}</span
-                  >
+                  >Overall GPA is:  {{ z.yearGPA ? z.yearGPA : 0 | number:2 }}
+
+                  
                 </a>
               </li>
             </ul>
           </div>
           <div
-            id="year{{z.year}}"
+            id="year{{1}}"
             class="tabContent col s12"
             ng-repeat="z in subjects"
           >
-            <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
+            <div class="col s12  semContent" ng-repeat="s in z.sems">
               <h6 class="">
                 Credits : {{ s.semesterCredit }} / {{ s.totalSemesterCredit }}
                 <span style="float: right"
@@ -221,7 +227,7 @@
                   </span>
                 </div>
                 <div class="col s8 m6 subName">{{ x.name }}</div>
-                <div class="col s12 m3 input-field">
+                <div class="col s12 m2 input-field">
                   <select
                     class="browser-default"
                     ng-class="x.grade | getGradeClass"
@@ -240,6 +246,45 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+    
+          <div class="nav-wrapper amber darken-4">
+           
+            <div
+              href="#"
+              class="brand-logo GPA center"
+              title="{{ myGPA | number : 2 }}"
+            >
+              Overall GPA is: {{ myGPA | number : 4 }}
+            </div>
+
+            <a data-target="slide-out" class="right sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
     
